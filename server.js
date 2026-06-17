@@ -27,7 +27,7 @@ const server = http.createServer((req, res) => {
         "data": todos
     }))
     res.end();
-  } else if (req.url=="/todos" && req.method === "POST"){
+  } else if (req.url==="/todos" && req.method === "POST"){
     req.on('end', ()=>{
         try {
             const title = JSON.parse(body).title;
@@ -50,7 +50,7 @@ const server = http.createServer((req, res) => {
             errHandle(res);
         }
     })
-  } else if (req.url="/todos" && req.method === "DELETE"){
+  } else if (req.url==="/todos" && req.method === "DELETE"){
     todos.length = 0;
     res.writeHead(200, headers);
     res.write(JSON.stringify({
